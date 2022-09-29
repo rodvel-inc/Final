@@ -8,7 +8,7 @@ def lambda_handler(event, context):
     # Set dynamodb table name
     table = dynamodb.Table('Visitor_Counter')
 
-    # Atomic update item in table or add if doesn't exist
+    # Atomic update item in table; add item if it doesn't exist
     ddbResponse = table.update_item(
         Key={
             "Count_ID": "visitorCount"
